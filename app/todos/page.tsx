@@ -7,6 +7,8 @@ type Todo = {
   completed: boolean
 }
 
+export const dynamic = "force-dynamic" // ปิดการ Static Optimization
+
 async function getTodos() {
   const res = await fetch("https://jsonplaceholder.typicode.com/todos?_limit=10", {
     next: { revalidate: 60 }, // ⏱️ Cache 60 วินาที แล้ว Revalidate
